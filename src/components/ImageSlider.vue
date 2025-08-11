@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { docReady, setAriaHidden, allyText } from './utils'
+import { docReady, setAriaHidden, allyText, remove_pagination_button } from './utils'
 import ImageSliderSlideItem from './ImageSliderSlideItem.vue'
 
 docReady(function () {
@@ -46,7 +46,9 @@ docReady(function () {
         this.slides[2].ariaLabel = allyText(2, this)
         this.pagination.bullets[0].ariaLabel = 'jump to the ' + allyText(0, this)
         this.pagination.bullets[1].ariaLabel = 'jump to the ' + allyText(1, this)
-        this.pagination.bullets[2].ariaLabel = 'jump to the ' + allyText(2)
+        this.pagination.bullets[3]
+          ? (this.pagination.bullets[3].ariaLabel = 'jump to the ' + allyText(2, this))
+          : (this.pagination.bullets[2].ariaLabel = 'jump to the ' + allyText(2, this))
       },
       slideChange: function () {
         let activeIndex = parseInt(this.activeIndex)
@@ -54,13 +56,33 @@ docReady(function () {
         this.pagination.bullets[0].ariaLabel = 'jump to the ' + allyText(0, this)
         this.pagination.bullets[1].ariaLabel = 'jump to the ' + allyText(1, this)
         this.pagination.bullets[2].ariaLabel = 'jump to the ' + allyText(2, this)
+        if (activeIndex == 2) {
+          document
+            .querySelector('.img-slider')
+            .shadowRoot.children[0].children[3].children[2].classList.add(
+              'swiper-pagination-bullet-active',
+            )
+        }
       },
       slideChangeTransitionEnd: function () {
         let activeIndex = parseInt(this.activeIndex)
         setAriaHidden(activeIndex, this)
       },
       resize: function () {
-        // remove_pagination_button();
+        console.log('this.pagination.bullets.removeChild[0]')
+        console.log(
+          document.querySelector('.img-slider').shadowRoot.children[0].children[3].children,
+        )
+        document.querySelector('.img-slider').shadowRoot.children[0].children[3].children.length ==
+        4
+          ? document
+              .querySelector('.img-slider')
+              .shadowRoot.children[0].children[3].removeChild(
+                document.querySelector('.img-slider').shadowRoot.children[0].children[3]
+                  .children[2],
+              )
+          : null
+        // this.pagination.bullets[3] ? this.pagination.bullets[3] : false
       },
     },
     pagination: {

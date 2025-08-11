@@ -6,13 +6,15 @@ export function docReady(fn) {
   }
 }
 //swiper has some bug that causes it to add an extra button, this removes the button that is not in use
-export function remove_pagination_button() {
-  let last_pagination_button = document.querySelector(
-    '.img-slider .swiper-pagination-bullet:nth-of-type(4)',
-  )
-  last_pagination_button
-    ? last_pagination_button.parentElement.removeChild(last_pagination_button.previousSibling)
-    : false
+export function remove_pagination_button(swiper) {
+  // imgSwiper.shadowRoot.children[0].children[3].removeChild(
+  // textSwiper.shadowRoot.children[0].children[3].children[0],
+  // )
+  // textSwiper.shadowRoot.children[0].children[4].removeChild(
+  //   textSwiper.shadowRoot.children[0].children[4].children[0],
+  // )
+  // let last_pagination_button = document.querySelector(".img-slider .swiper-pagination-bullet:nth-of-type(4)");
+  // (last_pagination_button) ? last_pagination_button.parentElement.removeChild(last_pagination_button.previousSibling) : false;
 }
 
 // hides invisible content from screen readers

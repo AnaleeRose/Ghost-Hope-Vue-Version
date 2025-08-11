@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import WelcomeItem from './WelcomeItem.vue'
 import TextSlider from './TextSlider.vue'
 import ImageSlider from './ImageSlider.vue'
 import { register } from 'swiper/element/bundle'
@@ -26,6 +25,10 @@ register()
 .img-slider-container {
   max-width: 105rem;
   height: fit-content;
+}
+
+.img-slider-container {
+  max-width: 70rem;
 }
 
 .hope-slider:before {
@@ -71,6 +74,10 @@ register()
   }
   .text-slider .swiper-button-next {
     left: calc(min(2vw, 5%) + 9.5rem);
+  }
+
+  .img-slider-container {
+    width: 65%;
   }
 }
 </style>
