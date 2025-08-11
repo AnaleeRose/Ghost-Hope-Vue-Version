@@ -1,41 +1,11 @@
 # Ghost Hope Vue Version
 
-This template should help get you started developing with Vue 3 in Vite.
+Moved the original Hope project over to vue/swiper with the help of copilot!
 
-## Recommended IDE Setup
+## See It Live
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+[Visit my portfolio](https://savannahskinner.com/previous_projects/ghost-hope-vue/)
 
-## Customize configuration
+## See the Original
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+[Visit my portfolio](https://savannahskinner.com/previous_projects/hope/)
